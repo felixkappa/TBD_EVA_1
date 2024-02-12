@@ -1,0 +1,23 @@
+Default schema set to `world`.
+Fetching global names, object names from `world` for auto-completion... Press ^C
+ to stop.
+MySQL [localhost:3306 ssl/world] SQL> show tables;
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+3 rows in set (0.0043 sec)
+MySQL [localhost:3306 ssl/world] SQL> desc city;
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| ID          | int      | NO   | PRI | NULL    | auto_increment |
+| Name        | char(35) | NO   |     |         |                |
+| CountryCode | char(3)  | NO   | MUL |         |                |
+| District    | char(20) | NO   |     |         |                |
+| Population  | int      | NO   |     | 0       |                |
++-------------+----------+------+-----+---------+----------------+
+5 rows in set (0.0090 sec)
