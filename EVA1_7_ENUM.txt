@@ -1,0 +1,144 @@
+MySQL Shell 8.0.36
+
+Copyright (c) 2016, 2023, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+MySQL JS> \
+SyntaxError: Invalid or unexpected token
+MySQL JS> \sql
+Switching to SQL mode... Commands end with ;
+MySQL SQL> \c mc-- root@localhost
+Creating a session to 'root@localhost'
+Please provide the password for 'root@localhost': ****
+Save password for 'root@localhost'? [Y]es/[N]o/Ne[v]er (default No): N
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 14 (X protocol)
+Server version: 8.0.36 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+MySQL [localhost:33060+ ssl] SQL> use personal;
+MySQL Error 1049: Unknown database 'personal'
+MySQL [localhost:33060+ ssl] SQL> use tbd_1;
+Default schema set to `tbd_1`.
+Fetching global names, object names from `tbd_1` for auto-completion... Press ^C to stop.
+MySQL [localhost:33060+ ssl/tbd_1] SQL> create table playeras(id int auto_increment key,nombre varc)
+                                        create table playeras(id int auto_increment key,nombre varch
+ar(50)not null,talla varchar(5)not null,tipo varchar(50)not null);
+Query OK, 0 rows affected (1.4305 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> show tables;
++-----------------+
+| Tables_in_tbd_1 |
++-----------------+
+| actores         |
+| estados         |
+| estudiante      |
+| personal        |
+| playeras        |
+| prueba_actor    |
++-----------------+
+6 rows in set (0.0035 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> desc playeras;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int         | NO   | PRI | NULL    | auto_increment |
+| nombre | varchar(50) | NO   |     | NULL    |                |
+| talla  | varchar(5)  | NO   |     | NULL    |                |
+| tipo   | varchar(50) | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.0054 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerota",)
+                                        insert into playeras(nombre,talla,tipo) values("Playerota","
+L","Polo");
+Query OK, 1 row affected (0.3478 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerototot
+a","Large","Polote");
+Query OK, 1 row affected (0.1392 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerototot
+ota","Grand","Polote");
+Query OK, 1 row affected (0.1047 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> delete from playeras;
+Query OK, 3 rows affected (0.1542 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> desc playeras;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int         | NO   | PRI | NULL    | auto_increment |
+| nombre | varchar(50) | NO   |     | NULL    |                |
+| talla  | varchar(5)  | NO   |     | NULL    |                |
+| tipo   | varchar(50) | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.0038 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> alter table playeras moddify talla enum("xs","s","l","xl",")
+                                        alter table playeras moddify talla enum("xs","s","l","xl","x
+xl");
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL s
+erver version for the right syntax to use near 'moddify talla enum("xs","s","l","xl","xxl")' at line
+ 1
+MySQL [localhost:33060+ ssl/tbd_1] SQL> alter table playeras modify talla enum("xs","s","l","xl","xx
+l");
+Query OK, 0 rows affected (2.9961 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerototot
+a","Large","Polote");
+ERROR: 1265: Data truncated for column 'talla' at row 1
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerototot
+a","l","Polote");
+Query OK, 1 row affected (0.1154 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> select * from playeras;
++----+---------------+-------+--------+
+| id | nombre        | talla | tipo   |
++----+---------------+-------+--------+
+|  4 | Playerototota | l     | Polote |
++----+---------------+-------+--------+
+1 row in set (0.0020 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> alter table playeras modify t enum("xs","s","l","xl","xxl");
+                                        alter table playeras modify tipo enum("pol","slim","normal",
+"cuello_redondo");
+ERROR: 1265: Data truncated for column 'tipo' at row 1
+MySQL [localhost:33060+ ssl/tbd_1] SQL> select * from playeras;
++----+---------------+-------+--------+
+| id | nombre        | talla | tipo   |
++----+---------------+-------+--------+
+|  4 | Playerototota | l     | Polote |
++----+---------------+-------+--------+
+1 row in set (0.0014 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> alter table playeras modify nombre varchar(50)not null uniqu
+                                        alter table playeras modify nombre varchar(50)not null uniqu
+e;
+Query OK, 0 rows affected (1.2570 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+MySQL [localhost:33060+ ssl/tbd_1] SQL> desc playeras;
++--------+-------------------------------+------+-----+---------+----------------+
+| Field  | Type                          | Null | Key | Default | Extra          |
++--------+-------------------------------+------+-----+---------+----------------+
+| id     | int                           | NO   | PRI | NULL    | auto_increment |
+| nombre | varchar(50)                   | NO   | UNI | NULL    |                |
+| talla  | enum('xs','s','l','xl','xxl') | YES  |     | NULL    |                |
+| tipo   | varchar(50)                   | NO   |     | NULL    |                |
++--------+-------------------------------+------+-----+---------+----------------+
+4 rows in set (0.0050 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> insert into playeras(nombre,talla,tipo) values("Playerota","
+l","Polo");
+Query OK, 1 row affected (0.1057 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> select * from playeras;
++----+---------------+-------+--------+
+| id | nombre        | talla | tipo   |
++----+---------------+-------+--------+
+|  4 | Playerototota | l     | Polote |
+|  5 | Playerota     | l     | Polo   |
++----+---------------+-------+--------+
+2 rows in set (0.0014 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> create database agencia;
+Query OK, 1 row affected (0.1828 sec)
+MySQL [localhost:33060+ ssl/tbd_1] SQL> use agencia;
+Default schema set to `agencia`.
+Fetching global names, object names from `agencia` for auto-completion... Press ^C to stop.
+MySQL [localhost:33060+ ssl/agencia] SQL> create table automovil;
+ERROR: 4028: A table must have at least one visible column.
+MySQL [localhost:33060+ ssl/agencia] SQL> create table automovil(n_serie int auto_increment key,mar)
+                                          create table automovil(n_serie int auto_increment key,marc
+a varchar(50)not null,modelo varchar(50)not null,aAÅ}o vinthar())
