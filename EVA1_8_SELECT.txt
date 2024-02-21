@@ -1,0 +1,300 @@
+| HOPE         |
+| HOPKINS      |
+| HOPKINS      |
+| HOPKINS      |
+| HOPPER       |
+| HOPPER       |
+| HUDSON       |
+| HUNT         |
+| HURT         |
+| JACKMAN      |
+| JACKMAN      |
+| JOHANSSON    |
+| JOHANSSON    |
+| JOHANSSON    |
+| JOLIE        |
+| JOVOVICH     |
+| KEITEL       |
+| KEITEL       |
+| KEITEL       |
+| KILMER       |
+| KILMER       |
+| KILMER       |
+| KILMER       |
+| KILMER       |
+| LEIGH        |
+| LOLLOBRIGIDA |
+| MALDEN       |
+| MANSFIELD    |
+| MARX         |
+| MCCONAUGHEY  |
+| MCCONAUGHEY  |
+| MCDORMAND    |
+| MCKELLEN     |
+| MCKELLEN     |
+| MCQUEEN      |
+| MCQUEEN      |
+| MIRANDA      |
+| MONROE       |
+| MONROE       |
+| MOSTEL       |
+| MOSTEL       |
+| NEESON       |
+| NEESON       |
+| NICHOLSON    |
+| NOLTE        |
+| NOLTE        |
+| NOLTE        |
+| NOLTE        |
+| OLIVIER      |
+| OLIVIER      |
+| PALTROW      |
+| PALTROW      |
+| PECK         |
+| PECK         |
+| PECK         |
+| PENN         |
+| PENN         |
+| PESCI        |
+| PFEIFFER     |
+| PHOENIX      |
+| PINKETT      |
+| PITT         |
+| POSEY        |
+| PRESLEY      |
+| REYNOLDS     |
+| RYDER        |
+| SILVERSTONE  |
+| SILVERSTONE  |
+| SINATRA      |
+| SOBIESKI     |
+| STALLONE     |
+| STREEP       |
+| STREEP       |
+| SUVARI       |
+| SWANK        |
+| TANDY        |
+| TANDY        |
+| TAUTOU       |
+| TEMPLE       |
+| TEMPLE       |
+| TEMPLE       |
+| TEMPLE       |
+| TOMEI        |
+| TORN         |
+| TORN         |
+| TORN         |
+| TRACY        |
+| TRACY        |
+| VOIGHT       |
+| WAHLBERG     |
+| WAHLBERG     |
+| WALKEN       |
+| WAYNE        |
+| WEST         |
+| WEST         |
+| WILLIAMS     |
+| WILLIAMS     |
+| WILLIAMS     |
+| WILLIS       |
+| WILLIS       |
+| WILLIS       |
+| WILSON       |
+| WINSLET      |
+| WINSLET      |
+| WITHERSPOON  |
+| WOOD         |
+| WOOD         |
+| WRAY         |
+| ZELLWEGER    |
+| ZELLWEGER    |
+| ZELLWEGER    |
++--------------+
+200 rows in set (0.0277 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL>
+MySQL [localhost:33060+ ssl/sakila] SQL>
+MySQL [localhost:33060+ ssl/sakila] SQL>
+MySQL [localhost:33060+ ssl/sakila] SQL> select distinct last_name from actor;
++--------------+
+| last_name    |
++--------------+
+| AKROYD       |
+| ALLEN        |
+| ASTAIRE      |
+| BACALL       |
+| BAILEY       |
+| BALE         |
+| BALL         |
+| BARRYMORE    |
+| BASINGER     |
+| BENING       |
+| BERGEN       |
+| BERGMAN      |
+| BERRY        |
+| BIRCH        |
+| BLOOM        |
+| BOLGER       |
+| BRIDGES      |
+| BRODY        |
+| BULLOCK      |
+| CAGE         |
+| CARREY       |
+| CHAPLIN      |
+| CHASE        |
+| CLOSE        |
+| COSTNER      |
+| CRAWFORD     |
+| CRONYN       |
+| CROWE        |
+| CRUISE       |
+| CRUZ         |
+| DAMON        |
+| DAVIS        |
+| DAY-LEWIS    |
+| DEAN         |
+| DEE          |
+| DEGENERES    |
+| DENCH        |
+| DEPP         |
+| DERN         |
+| DREYFUSS     |
+| DUKAKIS      |
+| DUNST        |
+| FAWCETT      |
+| GABLE        |
+| GARLAND      |
+| GIBSON       |
+| GOLDBERG     |
+| GOODING      |
+| GRANT        |
+| GUINESS      |
+| HACKMAN      |
+| HARRIS       |
+| HAWKE        |
+| HESTON       |
+| HOFFMAN      |
+| HOPE         |
+| HOPKINS      |
+| HOPPER       |
+| HUDSON       |
+| HUNT         |
+| HURT         |
+| JACKMAN      |
+| JOHANSSON    |
+| JOLIE        |
+| JOVOVICH     |
+| KEITEL       |
+| KILMER       |
+| LEIGH        |
+| LOLLOBRIGIDA |
+| MALDEN       |
+| MANSFIELD    |
+| MARX         |
+| MCCONAUGHEY  |
+| MCDORMAND    |
+| MCKELLEN     |
+| MCQUEEN      |
+| MIRANDA      |
+| MONROE       |
+| MOSTEL       |
+| NEESON       |
+| NICHOLSON    |
+| NOLTE        |
+| OLIVIER      |
+| PALTROW      |
+| PECK         |
+| PENN         |
+| PESCI        |
+| PFEIFFER     |
+| PHOENIX      |
+| PINKETT      |
+| PITT         |
+| POSEY        |
+| PRESLEY      |
+| REYNOLDS     |
+| RYDER        |
+| SILVERSTONE  |
+| SINATRA      |
+| SOBIESKI     |
+| STALLONE     |
+| STREEP       |
+| SUVARI       |
+| SWANK        |
+| TANDY        |
+| TAUTOU       |
+| TEMPLE       |
+| TOMEI        |
+| TORN         |
+| TRACY        |
+| VOIGHT       |
+| WAHLBERG     |
+| WALKEN       |
+| WAYNE        |
+| WEST         |
+| WILLIAMS     |
+| WILLIS       |
+| WILSON       |
+| WINSLET      |
+| WITHERSPOON  |
+| WOOD         |
+| WRAY         |
+| ZELLWEGER    |
++--------------+
+121 rows in set (0.0414 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL> select * from actor where actor_id =200;
++----------+------------+-----------+---------------------+
+| actor_id | first_name | last_name | last_update         |
++----------+------------+-----------+---------------------+
+|      200 | THORA      | TEMPLE    | 2006-02-15 04:34:33 |
++----------+------------+-----------+---------------------+
+1 row in set (0.0013 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL> select * from actor where last_name ="NOLTE";
++----------+------------+-----------+---------------------+
+| actor_id | first_name | last_name | last_update         |
++----------+------------+-----------+---------------------+
+|      108 | WARREN     | NOLTE     | 2006-02-15 04:34:33 |
+|      122 | SALMA      | NOLTE     | 2006-02-15 04:34:33 |
+|      125 | ALBERT     | NOLTE     | 2006-02-15 04:34:33 |
+|      150 | JAYNE      | NOLTE     | 2006-02-15 04:34:33 |
++----------+------------+-----------+---------------------+
+4 rows in set (0.0015 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL> select * from actor where last_name ="NOLTE" or last_name ;
+                                         select * from actor where actor_id =200;2KEITEL2;
++----------+------------+-----------+---------------------+
+| actor_id | first_name | last_name | last_update         |
++----------+------------+-----------+---------------------+
+|      200 | THORA      | TEMPLE    | 2006-02-15 04:34:33 |
++----------+------------+-----------+---------------------+
+1 row in set (0.0012 sec)
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL s
+erver version for the right syntax to use near '2KEITEL2' at line 1
+MySQL [localhost:33060+ ssl/sakila] SQL> select first_name, last_name from actor where last_name = "
+                                         select first_name, last_name from actor where last_name = "
+NOLTE" or last_name = "KEITEL";
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| MILLA      | KEITEL    |
+| GRETA      | KEITEL    |
+| MARY       | KEITEL    |
+| WARREN     | NOLTE     |
+| SALMA      | NOLTE     |
+| ALBERT     | NOLTE     |
+| JAYNE      | NOLTE     |
++------------+-----------+
+7 rows in set (0.0358 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL> select first_name, last_name from actor where last_name = "
+NOLTE" or last_name = "KEITEL" order by last_name,first_name;
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| GRETA      | KEITEL    |
+| MARY       | KEITEL    |
+| MILLA      | KEITEL    |
+| ALBERT     | NOLTE     |
+| JAYNE      | NOLTE     |
+| SALMA      | NOLTE     |
+| WARREN     | NOLTE     |
++------------+-----------+
+7 rows in set (0.0017 sec)
+MySQL [localhost:33060+ ssl/sakila] SQL>
